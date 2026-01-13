@@ -3,8 +3,9 @@ import pandas as pd
 import re
 import os
 
-input_path = r'd:/Code/app_code/ai_projects/projects/WatchMaster_AutoGen_v2/data/南京顺序-维修师介绍.xlsx-11.21.xlsx'
-output_path = r'd:/Code/app_code/ai_projects/projects/WatchMaster_AutoGen_v2/data/维修师数据_清洗版.xlsx'
+# input_path = r'data/sample_input.xlsx'
+input_path = r'data/南京顺序-维修师介绍.xlsx-11.21.xlsx'
+output_path = r'data/维修师数据_清洗版.xlsx'
 
 try:
     # Row 2 is header (0, 1, 2)
@@ -48,7 +49,7 @@ try:
     for idx, row in df.iterrows():
         # Get raw values
         store = str(row.iloc[4]) if pd.notna(row.iloc[4]) else ""
-        store = store.replace("盛时钟表维修", "").strip()
+        # store = store.replace("某某品牌后缀", "").strip() # 可在此处添加特定品牌后缀清洗逻辑
         
         full_text = str(row.iloc[6]) if pd.notna(row.iloc[6]) else ""
         

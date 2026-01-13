@@ -253,7 +253,7 @@ class PsdProcessor:
 class ExcelCleanerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("WatchMaster 自动化工坊")
+        self.root.title("智能设计工坊")
         self.root.geometry("700x760")
         
         # Base paths
@@ -264,7 +264,7 @@ class ExcelCleanerApp:
         main_frame = tk.Frame(root, padx=20, pady=20)
         main_frame.pack(fill=tk.BOTH, expand=True)
 
-        tk.Label(main_frame, text="WatchMaster 自动化工坊", font=("Microsoft YaHei", 18, "bold"), fg="#333").pack(pady=(0, 20))
+        tk.Label(main_frame, text="智能设计工坊", font=("Microsoft YaHei", 18, "bold"), fg="#333").pack(pady=(0, 20))
 
         # === Step 1: Data Cleaning ===
         step1_frame = tk.LabelFrame(main_frame, text="步骤 1: 数据清洗", font=("Microsoft YaHei", 10, "bold"), fg="#2E7D32", bg="#F1F8E9", padx=10, pady=10)
@@ -543,7 +543,7 @@ class ExcelCleanerApp:
                 if not name: continue # Skip empty names
                 
                 store = str(row[store_col_name]).strip() if store_col_name and pd.notna(row[store_col_name]) else ""
-                store = store.replace("盛时钟表维修", "").strip()
+                # store = store.replace("某某品牌后缀", "").strip() # 可在此处添加特定品牌后缀清洗逻辑
 
                 # Get Rich Text
                 full_text = str(row[content_col_name]).strip() if content_col_name and pd.notna(row[content_col_name]) else ""

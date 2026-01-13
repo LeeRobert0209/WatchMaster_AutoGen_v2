@@ -2,7 +2,8 @@
 import pandas as pd
 import os
 
-file_path = r'd:/Code/app_code/ai_projects/projects/WatchMaster_AutoGen_v2/data/南京顺序-维修师介绍.xlsx-11.21.xlsx'
+# file_path = r'data/sample_input.xlsx' # 请修改为实际文件路径
+file_path = r'data/南京顺序-维修师介绍.xlsx-11.21.xlsx' # 示例路径
 
 try:
     df = pd.read_excel(file_path, header=None) # Read without header to see raw data

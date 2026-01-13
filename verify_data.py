@@ -1,6 +1,6 @@
 
 import pandas as pd
-output_path = r'd:/Code/app_code/ai_projects/projects/WatchMaster_AutoGen_v2/data/维修师数据_清洗版.xlsx'
+output_path = r'data/维修师数据_清洗版.xlsx'
 
 try:
     df = pd.read_excel(output_path)
